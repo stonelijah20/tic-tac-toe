@@ -1,0 +1,81 @@
+*,*::after, *::before {
+    box-sizing: border-box;
+}
+body{
+    margin: 0%;
+}
+header {
+    display: flex;
+    justify-content: center;
+}
+.game-container {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center; 
+    align-items: center;
+    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+.block{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.block:first-child,
+:nth-child(2),:nth-child(3){
+    border-top: none;
+}
+.block:first-child, :nth-child(4), :nth-child(7){
+    border-left: none;
+}
+.block:nth-child(7), :nth-child(8), :nth-child(9){
+    border-bottom: none;
+}
+.block:nth-child(3),
+:nth-child(6),
+:nth-child(9) {
+    border-right: none;
+}
+.block.x::before,
+.block.x::after{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 90px;
+    background-color: red;
+}
+.block.x::before{
+    transform: rotate(45deg)
+}
+.block.x::after{
+    transform: rotate(-45deg);
+}
+.block.o::before,
+.block.o::after{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+.block.o::before{
+    width: 90px;
+    height: 90px;
+    background-color: red;
+}
+.block.o::after{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+}
+.winnerText{
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+}
+.block.winStroke {
+    background-color: green;
+}
